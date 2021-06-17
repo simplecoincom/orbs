@@ -2,6 +2,7 @@ version: 2.1
 
 orbs:
   # Replace this with your own!
+  simplecoin-utils: simplecoin-orbs/simplecoin-utils@<<pipeline.parameters.dev-orb-version>>
   orb-tools: circleci/orb-tools@10.0
 
 # Pipeline Parameters

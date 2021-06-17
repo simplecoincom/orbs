@@ -1,5 +1,5 @@
 description: >
-  runs a semantic-release on the defined release branch 
+  runs a semantic-release on the defined release branch
 
 docker:
    - image: circleci/node:16.3.0
@@ -16,4 +16,3 @@ steps:
   - run:
       command: npx semantic-release@v17.4.4 -b << parameters.release-branch >>
       name: Run semantic-versioning
-working_directory: ~/project
