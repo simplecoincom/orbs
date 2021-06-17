@@ -11,13 +11,9 @@ parameters:
     description: "Branch to trigger semantic-release on"
 
 steps:
-  - semantic-release:
-        description: |
-          Create git tags according to the semantics of the commits. Can aslo tag docker images. Should be run in a node executor
-        steps:
-          - checkout:
-              path: ~/project
-          - run:
-              command: npx semantic-release@v17.4.4 -b << parameters.release-branch >>
-              name: Run semantic-versioning
-        working_directory: ~/project
+  - checkout:
+      path: ~/project
+  - run:
+      command: npx semantic-release@v17.4.4 -b << parameters.release-branch >>
+      name: Run semantic-versioning
+working_directory: ~/project
