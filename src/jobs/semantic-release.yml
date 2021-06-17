@@ -1,7 +1,8 @@
 description: >
   runs a semantic-release on the defined release branch 
-# What will this job do?
-# Descriptions should be short, simple, and clear.
+
+docker:
+   - image: circleci/node:16.3.0
 
 parameters:
   release-branch:
@@ -11,15 +12,12 @@ parameters:
 
 steps:
   - semantic-release:
-       description: |
-           Create git tags according to the semantics of the commits. Can aslo tag docker images. Should be run in a node executor
-       docker:
-           - image: circleci/node:16.3.0
-       steps:
-           - checkout:
-               path: ~/project
-           - run:
-               command: npx semantic-release@v17.4.4 -b << parameters.release-branch >>
-               name: Run semantic-versioning
-       working_directory: ~/project
-
+        description: |
+          Create git tags according to the semantics of the commits. Can aslo tag docker images. Should be run in a node executor
+        steps:
+          - checkout:
+              path: ~/project
+          - run:
+              command: npx semantic-release@v17.4.4 -b << parameters.release-branch >>
+              name: Run semantic-versioning
+        working_directory: ~/project
