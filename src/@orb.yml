@@ -1,6 +1,6 @@
 version: 2.1
 
-description: Orb for automating semantic-release's
+description: And orb with a collection of utilities for automating releases
 
 display:
   home_url: "https://www.simplecoin.com"
