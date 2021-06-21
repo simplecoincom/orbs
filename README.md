@@ -1,19 +1,15 @@
-# Orb Project Template
+# simplecoin-orbs/simplecoin-utils orb
 
-[![CircleCI Build Status](https://circleci.com/gh/simplecoincom/orbs.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/simplecoincom/orbs) [![CircleCI Orb Version](https://badges.circleci.com/orbs/simplecoin-orbs/simplecoin-utils.svg)](https://circleci.com/orbs/registry/orb/simplecoin-orbs/simplecoin-utils) [![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/simplecoincom/orbs/master/LICENSE) [![CircleCI Community](https://img.shields.io/badge/community-CircleCI%20Discuss-343434.svg)](https://discuss.circleci.com/c/ecosystem/orbs)
+[![CircleCI Build Status](https://circleci.com/gh/simplecoincom/orbs.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/simplecoincom/orbs) [![CircleCI Orb Version](https://badges.circleci.com/orbs/simplecoin-orbs/simplecoin-utils.svg)](https://circleci.com/orbs/registry/orb/simplecoin-orbs/simplecoin-utils) [![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/simplecoincom/orbs/master/LICENSE)
 
 
-
-A starter template for orb projects. Build, test, and publish orbs automatically on CircleCI with [Orb-Tools](https://circleci.com/orbs/registry/orb/circleci/orb-tools).
+The purpose of the simplecoin-utils orb is to provide a single orb to automate semantic-release's and other delivery in the SimpleCoin orginisation.
 
 Additional READMEs are available in each directory.
-
-
 
 ## Resources
 
 [CircleCI Orb Registry Page](https://circleci.com/orbs/registry/orb/simplecoin-orbs/orbs) - The official registry page of this orb for all versions, executors, commands, and jobs described.
-[CircleCI Orb Docs](https://circleci.com/docs/2.0/orb-intro/#section=configuration) - Docs for using and creating CircleCI Orbs.
 
 ### How to Contribute
 
@@ -37,5 +33,15 @@ Example: `[semver:major]`
 * On merge, after manual approval, the orb will automatically be published to the Orb Registry.
 
 
-For further questions/comments about this or other orbs, visit the Orb Category of [CircleCI Discuss](https://discuss.circleci.com/c/orbs).
+## Jobs
 
+- [semantic-release](jobs/semantic-release.yml)
+  
+## Contributing
+
+Too add a new job or command to the orb, please open a PR with your changes explaining in detail what the orb does. Also refer the the Orb Authoring docs.
+
+## See:
+ - [Orb Author Intro](https://circleci.com/docs/2.0/orb-author-intro/#section=configuration)
+ - [Reusable Configuration](https://circleci.com/docs/2.0/reusing-config)
+ - [Orb Concepts](https://circleci.com/docs/2.0/orb-author/?section=configuration)

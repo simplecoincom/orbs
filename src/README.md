@@ -10,6 +10,7 @@ This is the entry point for our orb "tree", which becomes our `orb.yml` file lat
 
 Within the `@orb.yml` we generally specify 4 configuration keys
 
+
 **Keys**
 
 1. **version**
@@ -21,6 +22,12 @@ Within the `@orb.yml` we generally specify 4 configuration keys
 4. **orbs**
     (optional) Some orbs may depend on other orbs. Import them here.
 
+  
+## Contributing
+
+Too add a new job or command to the orb, please open a PR with your changes explaining in detail what the orb does. Also refer the the Orb Authoring docs.
+
 ## See:
  - [Orb Author Intro](https://circleci.com/docs/2.0/orb-author-intro/#section=configuration)
  - [Reusable Configuration](https://circleci.com/docs/2.0/reusing-config)
+ - [Orb Concepts](https://circleci.com/docs/2.0/orb-author/?section=configuration)
