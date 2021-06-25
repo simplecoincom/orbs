@@ -48,6 +48,11 @@ parameters:
     description: |
       If true, it will send notifications to slack. Make sure a context `slack-secrets` exists
     type: boolean
+  slack-mention:
+    default: '@devops'
+    description: |
+      A Slack group or user to mention
+    type: string
   version:
     default: 16.3.0
     description: >
@@ -99,8 +104,8 @@ steps:
       steps:
         - slack/notify:
             event: fail
-            mentions: '@ops'
+            mentions: << parameters.slack-mention >>
             template: basic_fail_1
         - slack/notify:
             event: pass
-            template: success_tagged_deploy_1
+            template: basic_success_1
