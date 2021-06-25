@@ -35,8 +35,17 @@ Example: `[semver:major]`
 
 ## Jobs
 
-- [semantic-release](jobs/semantic-release.yml)
-  
+- [semantic-release](src/jobs/semantic-release.yml)
+- [test](src/jobs/test.yml)
+
+## Commands
+
+- [install-packages](src/commands/install-packages.yml)
+
+## Executors
+
+- [default](src/executors/default.yml)
+
 ## Contributing
 
 Too add a new job or command to the orb, please open a PR with your changes explaining in detail what the orb does. Also refer the the Orb Authoring docs.
