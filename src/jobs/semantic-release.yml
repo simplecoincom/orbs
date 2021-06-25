@@ -5,14 +5,33 @@ docker:
    - image: circleci/node:16.3.0
 
 parameters:
+   slack-notify:
+      default: true
+      description: |
+        If true, it will send notifications to slack. Make sure a context `slack-secrets` exists
+      type: boolean
+   slack-mention:
+      default: '@devops'
+      description: |
+        A Slack group or user to mention
+      type: string
    release-branch:
       type: string
       default: "master"
       description: "Branch to trigger semantic-release on"
-
 steps:
    - checkout:
         path: ~/project
    - run:
         command: npx semantic-release@v17.4.4 -b << parameters.release-branch >>
         name: Run semantic-versioning
+   - when:
+        condition: << parameters.slack-notify >>
+        steps:
+           - slack/notify:
+                event: fail
+                mentions: << parameters.slack-mention >>
+                template: basic_fail_1
+           - slack/notify:
+                event: pass
+                template: basic_success_1

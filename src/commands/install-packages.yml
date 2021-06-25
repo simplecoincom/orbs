@@ -43,6 +43,16 @@ parameters:
       - yarn
       - yarn-berry
     type: enum
+  slack-notify:
+    default: true
+    description: |
+      If true, it will send notifications to slack. Make sure a context `slack-secrets` exists
+    type: boolean
+  slack-mention:
+    default: '@devops'
+    description: |
+      A Slack group or user to mention
+    type: string
   with-cache:
     default: true
     description: Cache your node packages automatically for faster install times.
@@ -237,3 +247,13 @@ steps:
                           checksum "/tmp/node-project-lockfile" }}
                         paths:
                           - <<parameters.app-dir>>/.yarn/cache
+  - when:
+      condition: << parameters.slack-notify >>
+      steps:
+        - slack/notify:
+            event: fail
+            mentions: << parameters.slack-mention >>
+            template: basic_fail_1
+        - slack/notify:
+            event: pass
+            template: basic_success_1

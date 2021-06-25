@@ -13,3 +13,5 @@ usage:
       jobs:
         - simplecoin-utils/semantic-release:
             release-branch: "prod" #to run semantic-release on a branch named `prod`
+            slack-notify: true
+            slack-mention: '@my-group'
