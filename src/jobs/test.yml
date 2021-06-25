@@ -43,6 +43,11 @@ parameters:
       Provide any optional steps you would like to run prior to installing the
       node dependencies. This is a good place to install global modules.
     type: steps
+  slack-notify:
+    default: true
+    description: |
+      If true, it will send notifications to slack. Make sure a context `slack-secrets` exists
+    type: boolean
   version:
     default: 16.3.0
     description: >
@@ -89,10 +94,13 @@ steps:
             name: Run YARN 2.x Tests
             working_directory: <<parameters.app-dir>>
 
-  - slack/notify:
-      event: fail
-      mentions: '@ops'
-      template: basic_fail_1
-  - slack/notify:
-      event: pass
-      template: success_tagged_deploy_1
+  - when:
+      condition: << parameters.slack-notify >>
+      steps:
+        - slack/notify:
+            event: fail
+            mentions: '@ops'
+            template: basic_fail_1
+        - slack/notify:
+            event: pass
+            template: success_tagged_deploy_1
