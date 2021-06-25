@@ -49,6 +49,7 @@ parameters:
       A full version tag must be specified. Example: "16.3.0" For a full list
       of releases, see the following: https://nodejs.org/en/download/releases
     type: string
+
 steps:
   - checkout
   - steps: << parameters.setup >>
