@@ -1,5 +1,6 @@
+---
 description: >
-  Example of using the simplecoin-utils orb.
+  Example of using the simplecoin-utils/semantic-release orb.
 # Provide a use-case based example for using this orb.
 # Everything in the `usage` section will be displayed in the orb registry.
 # Comments are not retained.
@@ -8,7 +9,7 @@ usage:
   orbs:
     simplecoin-utils: simplecoin-orbs/simplecoin-utils@1
   workflows:
-    use-my-orb:
+    run-semantic-release:
       jobs:
         - simplecoin-utils/semantic-release:
-             release-branch: "prod" #to run semantic-release on a branch named `prod`
+            release-branch: "prod" #to run semantic-release on a branch named `prod`
