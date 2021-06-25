@@ -88,3 +88,11 @@ steps:
             command: yarn run <<parameters.run-command>>
             name: Run YARN 2.x Tests
             working_directory: <<parameters.app-dir>>
+
+  - slack/notify:
+      event: fail
+      mentions: '@ops'
+      template: basic_fail_1
+  - slack/notify:
+      event: pass
+      template: success_tagged_deploy_1
