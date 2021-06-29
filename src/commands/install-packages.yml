@@ -254,6 +254,3 @@ steps:
             event: fail
             mentions: << parameters.slack-mention >>
             template: basic_fail_1
-        - slack/notify:
-            event: pass
-            template: basic_success_1
